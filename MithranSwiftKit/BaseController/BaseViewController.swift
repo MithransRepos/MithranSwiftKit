@@ -10,7 +10,7 @@ import UIKit
 
 open class BaseViewController: UIViewController {
     
-    let tableView: UITableView  = UITableView()
+    public let tableView: UITableView  = UITableView()
     let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(style: .medium)
     var apiCallInProgess: Bool = false
     

@@ -7,15 +7,15 @@
 //
 
 import UIKit
-public class BaseTableViewCell: UITableViewCell, ReuseIdentifying {
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+open class BaseTableViewCell: UITableViewCell, ReuseIdentifying {
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addViews()
         setConstraints()
     }
     
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -26,13 +26,13 @@ public class BaseTableViewCell: UITableViewCell, ReuseIdentifying {
 }
 
 
-protocol ReuseIdentifying {
+public protocol ReuseIdentifying {
     static var reuseIdentifier: String { get }
 }
 
 
 extension ReuseIdentifying {
-    static var reuseIdentifier: String {
+    public static var reuseIdentifier: String {
         return String(describing: Self.self)
     }
 }
